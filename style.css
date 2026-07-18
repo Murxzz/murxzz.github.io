@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
 
 :root {
+    color-scheme: dark;
     --bg-color: #0b0f19;
     --card-bg: rgba(255, 255, 255, 0.03);
     --card-border: rgba(255, 255, 255, 0.08);
@@ -336,6 +337,10 @@ section h1::after {
     font-family: var(--font-sans);
     font-size: 1rem;
     transition: var(--transition-smooth);
+}
+
+.form-group input[type="date"] {
+    cursor: pointer;
 }
 
 .form-group input:focus,
