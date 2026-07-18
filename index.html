@@ -100,7 +100,7 @@
         <h1>Sazināties</h1>
         <div class="contact-container-form">
             <p class="contact-intro">Ja vēlaties sadarboties vai jums ir kādi jautājumi, droši aizpildiet formu vai sazinieties sociālajos tīklos!</p>
-            <form id="contact-form" class="contact-form" action="https://formsubmit.co/kozlovskismarkuss7@gmail.com" method="POST" enctype="multipart/form-data">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/kozlovskismarkuss7@gmail.com" method="POST" enctype="multipart/form-data" target="hidden_iframe">
                 <!-- Disable Captcha for a smoother user experience -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="No mājas lapas">
@@ -133,6 +133,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Hidden Iframe to handle file upload submission without page reload -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     
     <script>
         // Update file name display on select
@@ -141,42 +144,34 @@
             document.querySelector('.file-upload-name').textContent = fileName;
         });
 
+        let formSubmitted = false;
+
         document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Let form submit normally to target="hidden_iframe"
             const status = document.getElementById('form-status');
             status.textContent = 'Sūta ziņu...';
             status.className = 'form-status';
+            
+            formSubmitted = true;
+        });
 
-            const formData = new FormData(this);
-
-            fetch('https://formsubmit.co/ajax/kozlovskismarkuss7@gmail.com', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Kļūda tīklā');
-                }
-            })
-            .then(data => {
-                status.textContent = 'Paldies! Ziņa tika nosūtīta veiksmīgi.';
+        document.getElementById('hidden_iframe').addEventListener('load', function() {
+            if (formSubmitted) {
+                const status = document.getElementById('form-status');
+                status.textContent = 'Paldies! Ziņa un fails tika nosūtīti veiksmīgi.';
                 status.className = 'form-status success';
-                this.reset();
+                
+                const form = document.getElementById('contact-form');
+                form.reset();
                 document.querySelector('.file-upload-name').textContent = 'Nav izvēlēts neviens fails';
+                
                 setTimeout(() => {
                     status.textContent = '';
                     status.className = 'form-status';
                 }, 5000);
-            })
-            .catch(error => {
-                status.textContent = 'Kļūda! Neizdevās nosūtīt ziņu. Lūdzu, mēģiniet vēlreiz.';
-                status.className = 'form-status error';
-            });
+                
+                formSubmitted = false;
+            }
         });
     </script>
 </body>
