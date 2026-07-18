@@ -100,7 +100,7 @@
         <h1>Sazināties</h1>
         <div class="contact-container-form">
             <p class="contact-intro">Ja vēlaties sadarboties vai jums ir kādi jautājumi, droši aizpildiet formu vai sazinieties sociālajos tīklos!</p>
-            <form id="contact-form" class="contact-form" action="https://formsubmit.co/kozlovskismarkuss7@gmail.com" method="POST">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/kozlovskismarkuss7@gmail.com" method="POST" enctype="multipart/form-data">
                 <!-- Disable Captcha for a smoother user experience -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="No mājas lapas">
@@ -116,6 +116,13 @@
                     <label for="message">Ziņa</label>
                     <textarea id="message" name="message" rows="5" placeholder="Uzraksti savu ziņu šeit..." required></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="attachment">Pievienot failu (Maks. 10MB)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input">
+                        <span class="file-upload-name">Nav izvēlēts neviens fails</span>
+                    </div>
+                </div>
                 <button type="submit" class="contact-button">Sūtīt ziņu</button>
                 <div id="form-status" class="form-status"></div>
             </form>
@@ -128,6 +135,12 @@
     </section>
     
     <script>
+        // Update file name display on select
+        document.getElementById('attachment').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'Nav izvēlēts neviens fails';
+            document.querySelector('.file-upload-name').textContent = fileName;
+        });
+
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const status = document.getElementById('form-status');
@@ -135,16 +148,13 @@
             status.className = 'form-status';
 
             const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => data[key] = value);
 
             fetch('https://formsubmit.co/ajax/kozlovskismarkuss7@gmail.com', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: formData
             })
             .then(response => {
                 if (response.ok) {
@@ -157,6 +167,7 @@
                 status.textContent = 'Paldies! Ziņa tika nosūtīta veiksmīgi.';
                 status.className = 'form-status success';
                 this.reset();
+                document.querySelector('.file-upload-name').textContent = 'Nav izvēlēts neviens fails';
                 setTimeout(() => {
                     status.textContent = '';
                     status.className = 'form-status';
