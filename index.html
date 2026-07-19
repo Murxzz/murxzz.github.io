@@ -42,6 +42,11 @@
 </head>
 
 <body>
+    <!-- Animated background blur blobs -->
+    <div class="glow-bg glow-bg-1"></div>
+    <div class="glow-bg glow-bg-2"></div>
+    <div class="glow-bg glow-bg-3"></div>
+
     <nav>
         <ul>
             <li><a href="#home">Sākums</a></li>
@@ -51,26 +56,93 @@
         </ul>
     </nav>
 
-    <section id="home" class="header-section">
-        <img src="assets/avatar.png" alt="Markuss Kozlovskis">
-        <div class="hero-text-container">
-            <h1 class="hero-headline">Modernas un ātras tīmekļa vietnes, kas palīdz augt jūsu biznesam.</h1>
-            <p class="hero-subtitle">Web Developer</p>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Pieejams jauniem projektiem
+            </div>
+            <h1 class="hero-headline">Modernas un ātras tīmekļa vietnes, kas palīdz augt jūsu <span class="highlight-text">biznesam.</span></h1>
+            <p class="hero-desc">Es radu augstas veiktspējas tīmekļa vietnes ar izcilu dizainu, optimizētu ātrumu un pārdomātu lietojamību, kas piesaista klientus un palielina pārdošanas apjomus.</p>
+            <div class="hero-actions">
+                <a href="#contacts" class="cta-button primary-btn">Sazināties</a>
+                <a href="#projects" class="cta-button secondary-btn">Skatīt darbus</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="avatar-wrapper">
+                <div class="glowing-ring ring-1"></div>
+                <div class="glowing-ring ring-2"></div>
+                <img src="assets/avatar.png" alt="Markuss Kozlovskis" class="hero-avatar">
+            </div>
         </div>
     </section>
 
     <section id="about" class="about-section">
-        <h1>Par mani</h1>
-        <p>Esmu tīmekļa izstrādātājs, kuram patīk radīt modernas, funkcionālas un vizuāli pievilcīgas tīmekļa vietnes.
-            Mana pieredze aptver priekšgala (frontend) tehnoloģijas, palīdzot pārvērst idejas reālos digitālos produktos.</p>
+        <h1 class="section-title">Par mani</h1>
+        <div class="about-grid">
+            <div class="about-info">
+                <h3>Kas es esmu?</h3>
+                <p>Esmu tīmekļa izstrādātājs, kuram patīk radīt modernas, funkcionālas un vizuāli pievilcīgas tīmekļa vietnes.
+                    Mana pieredze aptver priekšgala (frontend) tehnoloģijas, palīdzot pārvērst idejas reālos digitālos produktos.</p>
+                <p>Katra mana izstrādātā lapa tiek optimizēta meklētājprogrammām (SEO) un ātrdarbībai, nodrošinot vislabāko iespējamo lietotāja pieredzi un palīdzot jūsu biznesam augt tiešsaistē.</p>
+            </div>
+            <div class="about-skills">
+                <h3>Manas Prasmes</h3>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Responsive Web Design</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Modern UI / CSS Development</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>SEO Optimizācija</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Page Speed Optimization</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="project-section">
-        <h1>Projekti</h1>
+        <h1 class="section-title">Projekti</h1>
         <div class="project-container">
             <div class="project">
-                <img src="assets/ecom_mockup.png" alt="Projekts 1">
+                <div class="project-img-wrapper">
+                    <img src="assets/ecom_mockup.png" alt="E-komercijas Platforma">
+                </div>
                 <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JS</span>
+                        <span class="tag">E-commerce</span>
+                    </div>
                     <h3>E-komercijas Platforma</h3>
                     <p>Moderna tiešsaistes veikala risinājums ar ātru groza darbību, drošiem maksājumiem un lietotājam
                         draudzīgu saskarni.</p>
@@ -85,8 +157,16 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/business_mockup.png" alt="Projekts 2">
+                <div class="project-img-wrapper">
+                    <img src="assets/business_mockup.png" alt="Biznesa Mājaslapa">
+                </div>
                 <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Local Business</span>
+                    </div>
                     <h3>Biznesa Mājaslapa</h3>
                     <p>Reprezentatīva un pilnībā adaptīva tīmekļa vietne vietējam uzņēmumam ar integrētu atsauksmju un
                         pakalpojumu sadaļu.</p>
@@ -101,11 +181,18 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/portfolio_mockup.png" alt="Projekts 3">
+                <div class="project-img-wrapper">
+                    <img src="assets/portfolio_mockup.png" alt="Portfeļa Vietne">
+                </div>
                 <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">CSS Grid</span>
+                        <span class="tag">Animations</span>
+                        <span class="tag">Portfolio</span>
+                        <span class="tag">Creative</span>
+                    </div>
                     <h3>Portfeļa Vietne</h3>
-                    <p>Interaktīvs dizainera portfolio ar animācijām un kontaktu formu potenciālo klientu piesaistei.
-                    </p>
+                    <p>Interaktīvs dizainera portfolio ar animācijām un kontaktu formu potenciālo klientu piesaistei.</p>
                     <a href="#" class="project-link">
                         Skatīt projektu
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -120,7 +207,7 @@
     </section>
 
     <section id="contacts" class="contact-section">
-        <h1>Sazināties</h1>
+        <h1 class="section-title">Sazināties</h1>
         <div class="contact-container-form">
             <p class="contact-intro">Ja vēlaties sadarboties vai jums ir kādi jautājumi, droši aizpildiet formu vai
                 sazinieties sociālajos tīklos!</p>
