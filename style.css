@@ -6,8 +6,8 @@
     --card-bg: rgba(9, 9, 11, 0.65);
     --card-border: rgba(255, 255, 255, 0.06);
     --card-border-hover: rgba(167, 139, 250, 0.45);
-    --text-primary: #f8fafc;
-    --text-secondary: #e2e8f0;
+    --text-primary: #ffffff;
+    --text-secondary: #f1f5f9;
     --accent-primary: #a78bfa; /* Violet */
     --accent-secondary: #22d3ee; /* Cyan */
     --gradient-accent: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
@@ -42,7 +42,7 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: radial-gradient(circle at center, rgba(3, 7, 18, 0.35) 0%, rgba(3, 7, 18, 0.85) 100%), url('./assets/pexels-steve-30018096.jpg');
+    background-image: radial-gradient(circle at center, rgba(3, 7, 18, 0.1) 0%, rgba(3, 7, 18, 0.75) 100%), url('./assets/6e0c247f-e6ab-4375-b53b-6d5247177119.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -126,6 +126,7 @@ section {
 
 section p {
     font-weight: 500;
+    color: var(--text-secondary);
 }
 
 section h1 {
