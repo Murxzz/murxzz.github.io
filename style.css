@@ -28,6 +28,11 @@ html {
 
 body {
     background-color: var(--bg-color);
+    background-image: radial-gradient(circle at center, rgba(11, 15, 25, 0.7) 0%, rgba(11, 15, 25, 0.95) 100%), url('assets/723c611a-2343-436c-9542-6dea8838ed87.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--text-primary);
     font-family: var(--font-sans);
     line-height: 1.6;
