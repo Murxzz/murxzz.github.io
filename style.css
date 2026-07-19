@@ -440,36 +440,48 @@ section h1.section-title::after {
     margin-bottom: 0.5rem;
 }
 
-.skill-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+.skills-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
 }
 
-.skill-info {
+.skill-chip {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    color: var(--text-primary);
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-.skill-progress-bar {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+.skill-chip svg {
+    color: var(--accent-secondary);
+    transition: var(--transition-smooth);
+    flex-shrink: 0;
 }
 
-.skill-progress {
-    height: 100%;
-    background: var(--gradient-accent);
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
-    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+.skill-chip:hover {
+    background: rgba(167, 139, 250, 0.05);
+    border-color: var(--card-border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(167, 139, 250, 0.2);
+    color: var(--accent-primary);
+}
+
+.skill-chip:hover svg {
+    color: var(--accent-primary);
+    transform: scale(1.15) rotate(8deg);
 }
 
 /* Projects Section */
