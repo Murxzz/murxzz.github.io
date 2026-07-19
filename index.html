@@ -46,6 +46,7 @@
         <ul>
             <li><a href="#home">Sākums</a></li>
             <li><a href="#about">Par mani</a></li>
+            <li><a href="#services">Pakalpojumi</a></li>
             <li><a href="#projects">Projekti</a></li>
             <li><a href="#contacts">Kontakti</a></li>
         </ul>
@@ -53,8 +54,10 @@
 
     <section id="home" class="header-section">
         <img src="assets/Screenshot_2025-02-06-15-37-25-222_com.whatsapp-edit.jpg" alt="Markuss Kozlovskis">
-        <h1>Markuss Kozlovskis</h1>
-        <p>Web Developer</p>
+        <div class="hero-text-container">
+            <h1 class="hero-headline">Modernas un ātras tīmekļa vietnes, kas palīdz augt jūsu biznesam.</h1>
+            <p class="hero-subtitle">Web Developer</p>
+        </div>
     </section>
 
     <section id="about" class="about-section">
@@ -63,11 +66,48 @@
             Mana pieredze aptver priekšgala (frontend) tehnoloģijas, palīdzot pārvērst idejas reālos digitālos produktos.</p>
     </section>
 
+    <section id="services" class="services-section">
+        <h1>Pakalpojumi</h1>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                </div>
+                <h3>Responsīvs dizains</h3>
+                <p>Pielāgota darbība visās ierīcēs – datoros, planšetēs un telefonos.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                </div>
+                <h3>SEO Optimizācija</h3>
+                <p>Pamata optimizācija, lai jūsu vietne būtu vieglāk atrodama Google meklētājā.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <h3>Ātra darbība</h3>
+                <p>Optimizēts ielādes ātrums lietotāju noturēšanai un labākai pieredzei.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="project-section">
         <h1>Projekti</h1>
         <div class="project-container">
             <div class="project">
-                <img src="assets/pexels-makrufinmuhammad-33537131.jpg" alt="Projekts 1">
+                <img src="assets/ecom_mockup.png" alt="Projekts 1">
                 <div class="project-content">
                     <h3>E-komercijas Platforma</h3>
                     <p>Moderna tiešsaistes veikala risinājums ar ātru groza darbību, drošiem maksājumiem un lietotājam
@@ -83,7 +123,7 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/pexels-makrufinmuhammad-33537131.jpg" alt="Projekts 2">
+                <img src="assets/business_mockup.png" alt="Projekts 2">
                 <div class="project-content">
                     <h3>Biznesa Mājaslapa</h3>
                     <p>Reprezentatīva un pilnībā adaptīva tīmekļa vietne vietējam uzņēmumam ar integrētu atsauksmju un
@@ -99,7 +139,7 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/pexels-makrufinmuhammad-33537131.jpg" alt="Projekts 3">
+                <img src="assets/portfolio_mockup.png" alt="Projekts 3">
                 <div class="project-content">
                     <h3>Portfeļa Vietne</h3>
                     <p>Interaktīvs dizainera portfolio ar animācijām un kontaktu formu potenciālo klientu piesaistei.
@@ -123,7 +163,7 @@
             <p class="contact-intro">Ja vēlaties sadarboties vai jums ir kādi jautājumi, droši aizpildiet formu vai
                 sazinieties sociālajos tīklos!</p>
             <form id="contact-form" class="contact-form" action="https://formsubmit.co/kozlovskismarkuss7@gmail.com"
-                method="POST" enctype="multipart/form-data" target="hidden_iframe">
+                method="POST" target="hidden_iframe">
                 <!-- Disable Captcha for a smoother user experience -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="No mājas lapas">
@@ -140,20 +180,21 @@
                     <textarea id="message" name="message" rows="5" placeholder="Uzraksti savu ziņu šeit..."
                         required></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="attachment">Pievienot failu (Maks. 10MB)</label>
-                    <div class="file-upload-wrapper">
-                        <input type="file" id="attachment" name="attachment" accept="image/*,application/pdf"
-                            class="file-upload-input">
-                        <span class="file-upload-name">Nav izvēlēts neviens fails</span>
-                    </div>
-                </div>
                 <button type="submit" class="contact-button">Sūtīt ziņu</button>
                 <div id="form-status" class="form-status"></div>
             </form>
             <div class="contact-links">
-                <a href="https://github.com/Murxzz" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://x.com/markussdev" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://github.com/Murxzz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="https://x.com/markussdev" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -162,12 +203,6 @@
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     <script>
-        // Update file name display on select
-        document.getElementById('attachment').addEventListener('change', function () {
-            const fileName = this.files[0] ? this.files[0].name : 'Nav izvēlēts neviens fails';
-            document.querySelector('.file-upload-name').textContent = fileName;
-        });
-
         let formSubmitted = false;
 
         document.getElementById('contact-form').addEventListener('submit', function (e) {
@@ -182,12 +217,11 @@
         document.getElementById('hidden_iframe').addEventListener('load', function () {
             if (formSubmitted) {
                 const status = document.getElementById('form-status');
-                status.textContent = 'Paldies! Ziņa un fails tika nosūtīti veiksmīgi.';
+                status.textContent = 'Paldies! Ziņa tika nosūtīta veiksmīgi.';
                 status.className = 'form-status success';
 
                 const form = document.getElementById('contact-form');
                 form.reset();
-                document.querySelector('.file-upload-name').textContent = 'Nav izvēlēts neviens fails';
 
                 setTimeout(() => {
                     status.textContent = '';
