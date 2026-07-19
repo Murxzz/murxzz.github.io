@@ -43,7 +43,7 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -2;
-    background-image: radial-gradient(circle at center, rgba(3, 7, 18, 0.1) 0%, rgba(3, 7, 18, 0.75) 100%), url('./assets/6e0c247f-e6ab-4375-b53b-6d5247177119.jpg');
+    background-image: radial-gradient(circle at center, rgba(3, 7, 18, 0) 0%, rgba(3, 7, 18, 0.65) 100%), url('./assets/pexels-kaveh-keshtiara-232855560-13179963.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
